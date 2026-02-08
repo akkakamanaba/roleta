@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>-</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+&lt;!DOCTYPE html&gt;
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>
+Death Store - Caixa da Sorte
+</title>
+<style>
+body {
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  font-family:Arial, sans-serif;
+  text-align:center;
+  overflow:hidden;
+
+  background:
+  linear-gradient(rgba(10,0,25,0.85), rgba(5,0,15,0.95)),
+  url("fundo.png");
+  background-size:cover;
+  background-position:center;
+}
+
+.container{
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.05);
+  padding:40px;
+  border-radius:25px;
+  box-shadow:0 0 60px rgba(140,0,255,0.6);
+}
+
+h1{
+  font-size:55px;
+  color:#d18cff;
+  text-shadow:
+  0 0 10px #a855ff,
+  0 0 20px #9333ea,
+  0 0 40px #7e22ce;
+  animation: neon 1.5s infinite alternate;
+}
+
+@keyframes neon{
+  from{ text-shadow:0 0 10px #9333ea;}
+  to{ text-shadow:0 0 35px #c084fc;}
+}
+
+input{
+  padding:14px;
+  width:280px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  text-align:center;
+  font-size:16px;
+}
+
+button{
+  margin-top:18px;
+  padding:15px 45px;
+  font-size:18px;
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+  color:white;
+  background: linear-gradient(135deg,#6d28d9,#c026d3);
+  box-shadow:0 0 25px #9333ea;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.08);
+  box-shadow:
+  0 0 20px #a855ff,
+  0 0 60px #9333ea;
+}
+
+.caixa{
+  width:230px;
+  height:230px;
+  margin-top:35px;
+  border-radius:25px;
+  background:linear-gradient(145deg,#9333ea,#4c1d95);
+  box-shadow:
+  0 0 30px #9333ea,
+  inset 0 0 20px #c084fc;
+  display:none;
+  position:relative;
+}
+
+.caixa.chacoalhar{
+  animation: shake .35s infinite;
+}
+
+@keyframes shake{
+  0%{transform:translateX(0)}
+  25%{transform:translateX(-8px)}
+  50%{transform:translateX(8px)}
+  75%{transform:translateX(-8px)}
+}
+
+.fitinha {
+  position: absolute;
+  width: 8px;
+  height: 40px;
+  top: -50px;
+  animation: cair 1.5s linear forwards;
+}
+
+@keyframes cair {
+  to {
+    transform: translateY(300px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+#resultado{
+  margin-top:25px;
+  font-size:28px;
+  font-weight:bold;
+  color:#f5d0fe;
+  text-shadow:0 0 15px #d946ef;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>
+🍀 Death Store 🍀
+</h1>
+<p>
+Digite sua key válida para desbloquear a Caixa da Sorte
+</p>
+<p><input id="keyInput" placeholder="Digite sua key"> <br>
+<button onclick="verificarKey()">Verificar Key</button></p>
+<button id="abrir" onclick="abrirCaixa()" style="display:none;">
+🎁 Abrir Caixa
+</button>
+<div id="caixa" class="caixa">
+
+</div>
+<div id="resultado">
+
+</div>
+</div>
+<script>
+const PERMANENT_KEY = "DEATH-PERMA-044";
+
+const SINGLE_USE_KEYS = [
+  "STORE-0D4J0","STORE-06DJN","STORE-0CM3N","STORE-0J46N",
+  "STORE-0KCMN","STORE-00CMD","STORE-02MXJ","STORE-04LKF",
+  "STORE-06VMV","STORE-01KDC","STORE-01MYB","STORE-04FLV",
+  "STORE-08T4X","STORE-07ZZZ","DEATH-07JVV","DEATH-09K7O",
+  "DEATH-07M2T","DEATH-06P3M","DEATH-05F1M","DEATH-02K2A"
+];
+
+const premios = [
+"1.500.300 de gemas 💎",
+"1.700.300 de gemas 💎",
+"1.200.001 de Gemas 💎"
+];
+
+let caixaJaAberta = false;
+
+function verificarKey() {
+  const key = keyInput.value.trim();
+
+  if (key === PERMANENT_KEY) {
+    resultado.innerText = "✅ Key permanente aceita! Abra sua caixa.";
+    abrir.style.display = "inline-block";
+    caixaJaAberta = false;
+    abrir.disabled = false;
+    return;
+  }
+
+  if (!SINGLE_USE_KEYS.includes(key)) {
+    resultado.innerText = "❌ Key inválida.";
+    return;
+  }
+
+  if (localStorage.getItem("used_" + key)) {
+    resultado.innerText = "❌ Essa key já foi usada.";
+    return;
+  }
+
+  resultado.innerText = "✅ Key válida! Abra sua caixa.";
+  abrir.style.display = "inline-block";
+  caixaJaAberta = false;
+  abrir.disabled = false;
+}
+
+function abrirCaixa() {
+  if (caixaJaAberta) {
+    resultado.innerText = "❌ Você já abriu essa caixa.";
+    return;
+  }
+
+  caixaJaAberta = true;
+
+  const caixa = document.getElementById("caixa");
+  caixa.style.display = "block";
+  caixa.classList.add("chacoalhar");
+  resultado.innerText = "";
+  abrir.disabled = true;
+  abrir.style.opacity = "0.6";
+  abrir.style.cursor = "not-allowed";
+
+  for (let i = 0; i < 20; i++) {
+    const f = document.createElement("div");
+    f.className = "fitinha";
+    f.style.left = Math.random() * 220 + "px";
+    f.style.background = ["gold","violet","cyan","lime"][Math.floor(Math.random()*4)];
+    caixa.appendChild(f);
+    setTimeout(() => f.remove(), 1500);
+  }
+
+  setTimeout(() => {
+    caixa.classList.remove("chacoalhar");
+    const premio = premios[Math.floor(Math.random() * premios.length)];
+    resultado.innerText = "🎉 Parabéns! Você ganhou " + premio;
+
+    const key = keyInput.value.trim();
+    if (key !== PERMANENT_KEY) {
+      localStorage.setItem("used_" + key, "true");
+    }
+  }, 3000);
+}
+</script>
+</body>
+</html>
+</body>
+</html>
